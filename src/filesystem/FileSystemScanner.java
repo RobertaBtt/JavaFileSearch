@@ -6,11 +6,7 @@ import java.util.Arrays;
 
 public class FileSystemScanner implements InterfaceFileSystemScanner{
 
-	public boolean isValidInput(String input) {
-		
-		return false;
-	}
-
+	
 	public boolean isDirectory(String inputName) {
 		File file = new File(inputName);
 		return file.isDirectory();
