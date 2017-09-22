@@ -8,5 +8,6 @@ public interface InterfaceFileSystemScanner {
 	boolean isFile(String inputName);
 	boolean exists(String inputName);
 	ArrayList<String> getListContent(String inputName);
+	int getFilesNumberInPath(String inputName);
 	
 }

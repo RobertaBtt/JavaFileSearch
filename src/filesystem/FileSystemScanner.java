@@ -33,4 +33,10 @@ public class FileSystemScanner implements InterfaceFileSystemScanner{
 		return file.exists();
 	}
 
+	public int getFilesNumberInPath(String inputName) {
+		File f = new File(inputName);
+		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
+		return names.size();
+	}
+
 }

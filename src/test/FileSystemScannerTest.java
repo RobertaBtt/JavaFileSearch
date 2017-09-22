@@ -54,12 +54,11 @@ public class FileSystemScannerTest {
 		assertEquals(false, validator.isDirectory(TESTNOTEXISTINGFILE));
 	}
 	
+	
 	@Test
-	public void testContentList() {
+	public void testontentList() {
 		FileSystemScanner validator = new FileSystemScanner();
-		assertEquals(1, validator.getListContent(TESTEXISTINGDIR).size());
-	}
-	
-	
+		assertEquals(4, validator.getFilesNumberInPath(TESTEXISTINGDIR));
+	}	
 
 }
