@@ -21,15 +21,30 @@ public class FileSearcher {
 			throw new Exception("Hello, please provide a directory");
 		}
 	}
+	
 	private static void manageConsole(String[] args){
+		
 		FileSystemScanner fileSystemScanner = new FileSystemScanner();
-		if (fileSystemScanner.exists(args[0]) && ( fileSystemScanner.isDirectory(args[0]))){
-			System.out.println("There are" + fileSystemScanner.getFilesNumberInPath(args[0]));
-			Scanner scanner = new Scanner(System.in);
-			while(true){
-				System.out.println("Search>");
-				final String line = scanner.nextLine();
+		
+		if (fileSystemScanner.exists(args[0])){
+			
+			if (fileSystemScanner.isDirectory(args[0])){
+				System.out.println("There are" + fileSystemScanner.getFilesNumberFromDirectory(args[0]));
+				
+				Scanner scanner = new Scanner(System.in);
+				while(true){
+					System.out.println("Search>");
+					final String line = scanner.nextLine();
+				}
+
+				
 			}
+			else{
+				System.out.println("Not a directory");
+			}
+		}
+			else {
+				System.out.println("Does not exist");			
 		}
 		
 		

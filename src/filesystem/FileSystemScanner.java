@@ -17,19 +17,20 @@ public class FileSystemScanner implements InterfaceFileSystemScanner{
 		return file.isFile();
 	}
 
-
-	public ArrayList<String> getListContent(String inputName) {
+	public boolean exists(String inputName) {
+			File file = new File(inputName);
+			return file.exists();
+	}
+	
+	public ArrayList<String> getNamesFilesFromDirectory(String inputName) {
 		File f = new File(inputName);
 		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
 		return names;
 	}
 
-	public boolean exists(String inputName) {
-		File file = new File(inputName);
-		return file.exists();
-	}
+	
 
-	public int getFilesNumberInPath(String inputName) {
+	public int getFilesNumberFromDirectory(String inputName) {
 		File f = new File(inputName);
 		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
 		return names.size();

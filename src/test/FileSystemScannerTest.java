@@ -27,17 +27,17 @@ public class FileSystemScannerTest {
 		TESTEXISTINGDIR  = s + "/src/test/test_folder";
 		TESTNOTEXISTINGDIR = s + "/src/test/test_folderz";
 		TESTEXISTINGFILE = s + "/src/test/test_folder/test.txt";
-		TESTNOTEXISTINGFILE = s + "/src/test/test_folder/test.txt";
+		TESTNOTEXISTINGFILE = s + "/src/test/test_folder/test_not_found.txt";
 	}
 
 	@Test
-	public void testExistingDirectory() {
+	public void testIsDirectory() {
 		FileSystemScanner validator = new FileSystemScanner();
 		assertEquals(true, validator.isDirectory(TESTEXISTINGDIR));
 	}
 	
 	@Test
-	public void testNotExistingDirectory() {
+	public void testIsNotDirectory() {
 		FileSystemScanner validator = new FileSystemScanner();
 		assertEquals(false, validator.isDirectory(TESTNOTEXISTINGDIR));
 	}
@@ -48,17 +48,25 @@ public class FileSystemScannerTest {
 		assertEquals(true, validator.isFile(TESTEXISTINGFILE));
 	}
 	
+	
 	@Test
-	public void testNotExistingFile() {
+	public void notExists() {
 		FileSystemScanner validator = new FileSystemScanner();
-		assertEquals(false, validator.isDirectory(TESTNOTEXISTINGFILE));
+		assertEquals(false, validator.exists(TESTNOTEXISTINGFILE));
 	}
 	
 	
 	@Test
 	public void testontentList() {
 		FileSystemScanner validator = new FileSystemScanner();
-		assertEquals(4, validator.getFilesNumberInPath(TESTEXISTINGDIR));
+		assertEquals(4, validator.getFilesNumberFromDirectory(TESTEXISTINGDIR));
 	}	
+	
+	@Test
+	public void getNamesFiles() {
+		FileSystemScanner validator = new FileSystemScanner();
+		assertEquals("test2.txt", validator.getNamesFilesFromDirectory(TESTEXISTINGDIR).get(0));
+	}
+	
 
 }
