@@ -22,7 +22,7 @@ public class FileSystemScanner implements InterfaceFileSystemScanner{
 			return file.exists();
 	}
 	
-	public ArrayList<String> getNamesFilesFromDirectory(String inputName) {
+	public ArrayList<String> getFileNamesFromDirectory(String inputName) {
 		File f = new File(inputName);
 		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
 		return names;

@@ -65,7 +65,7 @@ public class FileSystemScannerTest {
 	@Test
 	public void getNamesFiles() {
 		FileSystemScanner validator = new FileSystemScanner();
-		assertEquals("test2.txt", validator.getNamesFilesFromDirectory(TESTEXISTINGDIR).get(0));
+		assertEquals("test2.txt", validator.getFileNamesFromDirectory(TESTEXISTINGDIR).get(0));
 	}
 	
 

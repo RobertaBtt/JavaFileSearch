@@ -1,14 +1,22 @@
 package filesystem;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
-import java.util.HashMap;
-
-public class FileNamesHashMap implements InterfaceFilesNameHashMap{
-
-	private Map<String, ArrayList<String>> filesNamesHashMap = new HashMap();
+public class FileSystemSteamAndLeaf implements InterfaceFileSystemStoringRepr {
 	
-	public void addElementToMap(String element) {
+	private Map<String, ArrayList<String>> filesNamesHashMap = new HashMap();
+
+	public void storeFilesNames(ArrayList<String> fileNames) {
+		for(String name: fileNames){
+			this.addElementToMap(name);
+		}
+		
+	}
+	
+	
+	private void addElementToMap(String element) {
 		String key = element.substring(0,1);
 		
 		if (filesNamesHashMap.containsKey(key)){
@@ -22,8 +30,15 @@ public class FileNamesHashMap implements InterfaceFilesNameHashMap{
 		
 	}
 
-	public ArrayList<String> getElementFromMap(String element) {
+	public ArrayList<String> find(String element) {
+		//first find the leaves of a steam
+		//cycle elements leaves
 		
+		return null;
+		
+	}
+	
+	private ArrayList<String> getLeaves(String element){
 		String key = element.substring(0,1);
 		
 		if (filesNamesHashMap.containsKey(key)){
@@ -31,5 +46,6 @@ public class FileNamesHashMap implements InterfaceFilesNameHashMap{
 		}
 		else return new ArrayList<String>();
 	}
-
+	
+	
 }
