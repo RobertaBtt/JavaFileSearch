@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FileSystemSteamAndLeaf implements InterfaceFileSystemStoringRepr {
+public class FSystemReprSteamAndLeaf implements InterfaceFSystemRepr {
 	
 	private Map<String, ArrayList<String>> filesNamesHashMap = new HashMap();
 
@@ -17,7 +17,7 @@ public class FileSystemSteamAndLeaf implements InterfaceFileSystemStoringRepr {
 	
 	
 	private void addElementToMap(String element) {
-		String key = element.substring(0,1);
+		String key = element.substring(0,1).toLowerCase();
 		
 		if (filesNamesHashMap.containsKey(key)){
 			filesNamesHashMap.get(key).add(element);
@@ -38,8 +38,8 @@ public class FileSystemSteamAndLeaf implements InterfaceFileSystemStoringRepr {
 		
 	}
 	
-	private ArrayList<String> getLeaves(String element){
-		String key = element.substring(0,1);
+	public ArrayList<String> getLeaves(String element){
+		String key = element.substring(0,1).toLowerCase();
 		
 		if (filesNamesHashMap.containsKey(key)){
 			return filesNamesHashMap.get(key);

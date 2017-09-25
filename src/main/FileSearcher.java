@@ -20,6 +20,9 @@ public class FileSearcher {
 		if (args.length == 0) {
 			throw new Exception("Hello, please provide the argument");
 		}
+		if (args.length > 1) {
+			throw new Exception("Please input one file name");
+		}
 	}
 	
 	private static void manageInput(String[] args){
