@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 
-import filesystem.FileSystemScanner;
+import filesystemscanner.FileSystemScanner;
 
 
 

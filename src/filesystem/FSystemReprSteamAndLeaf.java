@@ -2,13 +2,15 @@ package filesystem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FSystemReprSteamAndLeaf implements InterfaceFSystemRepr {
 	
-	private Map<String, ArrayList<String>> filesNamesHashMap = new HashMap();
+	private Map<String, ArrayList<String>> filesNamesHashMap = new HashMap<String, ArrayList<String>>();
 
-	public void storeFilesNames(ArrayList<String> fileNames) {
+	
+	public void storeFilesNames(ArrayList<String> fileNames) {		
 		for(String name: fileNames){
 			this.addElementToMap(name);
 		}
@@ -30,15 +32,20 @@ public class FSystemReprSteamAndLeaf implements InterfaceFSystemRepr {
 		
 	}
 
-	public ArrayList<String> find(String element) {
-		//first find the leaves of a steam
-		//cycle elements leaves
+	public List<String> findMatches(String element) {
 		
-		return null;
+		RegExprScoreMatch scoreMatch = new RegExprScoreMatch();
+		List<String> matches = new ArrayList<String>();		
+		List<String> leaves = this.getLeaves(element);
+		for(String leaf: leaves){
+			matches.add(leaf + " " + scoreMatch.getMatch(leaf, element) + " %");
+		}
+		
+		return matches;
 		
 	}
 	
-	public ArrayList<String> getLeaves(String element){
+	public List<String> getLeaves(String element){
 		String key = element.substring(0,1).toLowerCase();
 		
 		if (filesNamesHashMap.containsKey(key)){

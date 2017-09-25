@@ -1,4 +1,4 @@
-package filesystem;
+package filesystemscanner;
 
 import java.io.File;
 import java.util.ArrayList;
