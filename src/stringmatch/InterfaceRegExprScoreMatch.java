@@ -1,4 +1,4 @@
-package filesystem;
+package stringmatch;
 
 public interface InterfaceRegExprScoreMatch {
 

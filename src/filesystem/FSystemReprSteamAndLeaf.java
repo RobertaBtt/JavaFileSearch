@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import stringmatch.RegExprScoreMatch;
+
 public class FSystemReprSteamAndLeaf implements InterfaceFSystemRepr {
 	
 	private Map<String, ArrayList<String>> filesNamesHashMap = new HashMap<String, ArrayList<String>>();
@@ -38,7 +40,7 @@ public class FSystemReprSteamAndLeaf implements InterfaceFSystemRepr {
 		List<String> matches = new ArrayList<String>();		
 		List<String> leaves = this.getLeaves(element);
 		for(String leaf: leaves){
-			matches.add(leaf + " " + scoreMatch.getMatch(leaf, element) + " %");
+			matches.add(leaf + " : " + scoreMatch.getMatch(leaf, element) + "%");
 		}
 		
 		return matches;

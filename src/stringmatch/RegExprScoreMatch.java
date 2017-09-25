@@ -1,4 +1,4 @@
-package filesystem;
+package stringmatch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public class RegExprScoreMatch implements InterfaceRegExprScoreMatch {
 		else if (fileNameSearched.matches(regExpLevel3)) return 33;
 		else if (fileNameSearched.matches(regExpLevel4)) return 25;
 		else if (fileNameSearched.matches(regExpLevel5)) return 10;
-		else return 0;
+		else return 1;
 	}
 
 }

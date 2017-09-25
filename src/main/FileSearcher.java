@@ -48,12 +48,7 @@ public class FileSearcher {
 				
 				Scanner scanner = new Scanner(System.in);
 				while(true){
-					System.out.println("Search>");
-					final String line = scanner.nextLine();
-					List<String> matches = fSystemSteamAndLeaf.findMatches(line);
-					for(String match : matches){
-						System.out.println(match);
-					}
+					fileSearch(scanner, fSystemSteamAndLeaf);
 				}				
 			}
 			else{
@@ -64,6 +59,15 @@ public class FileSearcher {
 			System.out.println("Does not exist");			
 		}		
 		
+	}
+	
+	private static void fileSearch(Scanner scanner, FSystemReprSteamAndLeaf fSystemSteamAndLeaf){
+		System.out.println("Search>");
+		final String line = scanner.nextLine();
+		List<String> matches = fSystemSteamAndLeaf.findMatches(line);
+		for(String match : matches){
+			System.out.println(match);
+		}
 	}
 
 }

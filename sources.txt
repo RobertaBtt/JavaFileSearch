@@ -1,7 +1,8 @@
-./src/filesystem/InterfaceFileSystemScanner.java
 ./src/filesystem/InterfaceFSystemRepr.java
-./src/filesystem/InterfaceRegExprScoreMatch.java
-./src/filesystem/FileSystemScanner.java
 ./src/filesystem/FSystemReprSteamAndLeaf.java
-./src/filesystem/RegExprScoreMatch.java
+./src/filesystemscanner/InterfaceFileSystemScanner.java
+./src/filesystemscanner/FileSystemScanner.java
+./src/stringmatch/InterfaceRegExprScoreMatch.java
+./src/stringmatch/RegExprScoreMatch.java
 ./src/main/FileSearcher.java
+

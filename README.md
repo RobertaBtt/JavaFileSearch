@@ -1,5 +1,7 @@
-From main dir of the project (/file_searcher):
+Go to the main directory of the project: /file_searcher:
+execute:
+1)javac @sources.txt 
+2)cd src/ 
+3)java main.FileSearcher  /home/user/TestFolder (your folder)
 
-javac @sources.txt 
-cd src/ 
-java main.FileSearcher  /home/user/TestFolder
+

@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import filesystem.RegExprScoreMatch;
+import stringmatch.RegExprScoreMatch;
+
 
 public class RegExprScoreMatchTest {
 
@@ -42,7 +43,7 @@ public class RegExprScoreMatchTest {
 	
 	@Test
 	public void test7() {		
-		assertEquals(0, regExprScoreMatch.getMatch("fileName.jpg", "00000"));
+		assertEquals(1, regExprScoreMatch.getMatch("fileName.jpg", "00000"));
 	}
 
 }
